@@ -1,24 +1,11 @@
-<div id="map-box" class="gpx" data-gpx-source="./harrogate2ripley.gpx" data-map-target="map-div">
+<div id="map-box" class="gpx" data-gpx-source="https://raw.githubusercontent.com/regwhitton/cycle-routes/master/harrogate2ripley.gpx" data-map-target="map-div">
 <style type="text/css" scoped> @import url("https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css"); </style>
-<style type="text/css" scoped>
-        body { width: 800px; margin: 0 auto; }
-        .gpx { border: 2px #aaa solid; border-radius: 5px;
-          box-shadow: 0 0 3px 3px #ccc;
-          width: 800px; margin: 1em auto; }
-        .gpx .header { padding: 0.5em; }
-        .gpx h3 { margin: 0; padding: 0; font-weight: bold; }
-        .gpx .desc { font-size: smaller; color: #444; }
-        .gpx .map { border: 1px #888 solid; border-left: none; border-right: none;
-          width: 800px; height: 500px; margin: 0; }
-        .gpx .footer { background: #f0f0f0; padding: 0.5em; }
-        .gpx ul.info { list-style: none; margin: 0; padding: 0; font-size: smaller; }
-        .gpx ul.info li { color: #666; padding: 2px; display: inline; }
-        .gpx ul.info li span { color: black; }
-      </style>
+<style type="text/css" scoped> .gpx {border: 2px #aaa solid; border-radius: 5px; box-shadow: 0 0 3px 3px #ccc; width: 800px; margin: 1em auto; } .gpx .header { padding: 0.5em; } .gpx h3 { margin: 0; padding: 0; font-weight: bold; } .gpx .desc { font-size: smaller; color: #444; } .gpx .map { border: 1px #888 solid; border-left: none; border-right: none; width: 800px; height: 500px; margin: 0; } .gpx .footer { background: #f0f0f0; padding: 0.5em; } .gpx ul.mapinfo { list-style: none; margin: 0; padding: 0; font-size: smaller; } .gpx ul.mapinfo li { color: #666; padding: 2px; display: inline; } .gpx .mapinfo span { color: black; }</style>
 <div class="header"><h3>Loading&#8230;</h3><span class="desc"></span></div>
 <div class="article"><div class="map" id="map-div"></div></div>
-<div class="footer"><ul class="info"><li>Distance:&nbsp;<span class="distance"></span>&nbsp;miles, <span class="mdistance"></span>&nbsp;km</li>&mdash;<li>Elevation:&nbsp;+<span class="elevation-gain"></span>&nbsp;metres, &#8211;<span class="elevation-loss"></span>&nbsp;metres (net:&nbsp;<span class="elevation-net"></span>&nbsp;metres)</li>&mdash;<li>Download <a href="#" class="gpx-link" download>GPX file</a></li></ul></div>
+<div class="footer"><span class="mapinfo">Distance:&nbsp;<span class="distance"></span>&nbsp;miles, <span class="mdistance"></span>&nbsp;km &mdash; Download <a href="#" class="gpx-link" download>GPX file</a></span></div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script><br />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.3.1/gpx.min.js"></script> 
-<script type="application/javascript"> function display_gpx(elt) { if (!elt) return; var url = elt.getAttribute('data-gpx-source'); var mapid = elt.getAttribute('data-map-target'); if (!url || !mapid) return; function _t(t) { return elt.getElementsByTagName(t)[0]; } function _c(c) { return elt.getElementsByClassName(c)[0]; } var map = L.map(mapid); L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>' }).addTo(map); var control = L.control.layers(null, null).addTo(map); new L.GPX(url, { async: true, marker_options: {startIconUrl: './assets/pin-icon-start.png', endIconUrl: './assets/pin-icon-end.png', shadowUrl: './assets/pin-shadow.png', wptIconUrls: { parking: './assets/parking.png', '': './assets/pin-icon-wpt.png' } }, }).on('loaded', function(e) { var gpx = e.target; map.fitBounds(gpx.getBounds()); control.addOverlay(gpx, gpx.get_name()); _t('h3').textContent = gpx.get_name(); _c('desc').textContent = gpx.get_desc(); _c('gpx-link').href = url; _c('distance').textContent = gpx.get_distance_imp().toFixed(2); _c('mdistance').textContent = (gpx.get_distance() / 1000).toFixed(2); _c('elevation-gain').textContent = gpx.get_elevation_gain().toFixed(0); _c('elevation-loss').textContent = gpx.get_elevation_loss().toFixed(0); _c('elevation-net').textContent  = (gpx.get_elevation_gain() - gpx.get_elevation_loss()).toFixed(0); }).addTo(map); } display_gpx(document.getElementById('map-box')); </script>
+<script type="application/javascript">_MAP_ASSET_SRC='https://raw.githubusercontent.com/regwhitton/cycle-routes/master/';function display_gpx(elt) {if (!elt) return; var url = elt.getAttribute('data-gpx-source'); var mapid = elt.getAttribute('data-map-target'); if (!url || !mapid) return; function _t(t) { return elt.getElementsByTagName(t)[0]; } function _c(c) { return elt.getElementsByClassName(c)[0]; } var map = L.map(mapid); L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>' }).addTo(map); var control = L.control.layers(null, null).addTo(map); new L.GPX(url, { async: true, marker_options: {startIconUrl: _MAP_ASSET_SRC+'assets/pin-icon-start.png', endIconUrl: _MAP_ASSET_SRC+'assets/pin-icon-end.png', shadowUrl:  _MAP_ASSET_SRC+'assets/pin-shadow.png', wptIconUrls: { parking:  _MAP_ASSET_SRC+'assets/parking.png', '':  _MAP_ASSET_SRC+'assets/pin-icon-wpt.png' } }, }).on('loaded', function(e) { var gpx = e.target; map.fitBounds(gpx.getBounds()); control.addOverlay(gpx, gpx.get_name()); _t('h3').textContent = gpx.get_name(); _c('desc').textContent = gpx.get_desc(); _c('gpx-link').href = url; _c('distance').textContent = gpx.get_distance_imp().toFixed(2); _c('mdistance').textContent = (gpx.get_distance() / 1000).toFixed(2); _c('elevation-gain').textContent = gpx.get_elevation_gain().toFixed(0); _c('elevation-loss').textContent = gpx.get_elevation_loss().toFixed(0); _c('elevation-net').textContent  = (gpx.get_elevation_gain() - gpx.get_elevation_loss()).toFixed(0); }).addTo(map); } display_gpx(document.getElementById('map-box')); </script>
+
