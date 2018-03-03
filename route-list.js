@@ -1,6 +1,6 @@
 _ROUTE_LIST = [
   {
-    file: 'harrogate2ripley.gpx,
+    file: 'harrogate2ripley.gpx',
     title: 'H',
   }
 ];
